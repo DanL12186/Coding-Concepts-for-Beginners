@@ -2,6 +2,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :user_readings
+
   validates :email, uniqueness: true, allow_blank: true
   validates :password, length: { minimum: 8 }
   validates :password, confirmation: true
