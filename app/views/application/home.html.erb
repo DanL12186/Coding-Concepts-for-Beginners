@@ -1,6 +1,10 @@
-<ul>
-<br>
+<% if logged_in? %>
+  <%= "Hey #{current_user.name}!" %>
+<% end %>
 
-"Hey there"
-
-</ul>
+<% if logged_in? %>
+  <%= link_to(user_path) %>
+<% else %>
+  <%= link_to('Login', new_session_path) %>
+  <%= link_to('Sign up', new_user_path) %>
+<% end %>
