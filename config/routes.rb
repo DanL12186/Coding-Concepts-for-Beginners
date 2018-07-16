@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  root "application#home"
 
   resources :users
   resources :readings
   resources :sessions, only: [:new, :create]
-  root "application#home"
+
+  delete "/logout" => "sessions#destroy"
 end
