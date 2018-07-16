@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    redirect_to root_path unless @user #keeps page from crashing when user not found
+    redirect_to root_path unless @user #maybe use a 404 in future
   end
 
   def update
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   private
 
   def set_user!
-    @user = User.find(params[:id])
+    @user = User.find_by(params[:id])
   end
 
   def user_params
