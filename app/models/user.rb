@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :user_readings
+  has_many :readings, through: :user_readings
 
   validates :email, uniqueness: true, allow_blank: true
   validates :password, length: { minimum: 8 }
