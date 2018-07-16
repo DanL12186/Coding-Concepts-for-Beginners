@@ -10,17 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_07_193155) do
+ActiveRecord::Schema.define(version: 2018_07_12_203206) do
 
   create_table "readings", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "subtitle"
+    t.integer "category_id"
+    t.string "summary"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_readings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "reading_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.integer "user_readings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
