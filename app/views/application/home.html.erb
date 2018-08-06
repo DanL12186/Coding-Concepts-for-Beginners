@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <%= "Hey #{current_user.name}!" %>
-  
+
   <%= link_to "Log Out", logout_path, method: :delete %>
-  <% link_to("Your page", user_path(current_user.id)) %>
+  <%= link_to("Your Page", user_path(current_user.id)) %>
 <% else %>
   <%= link_to('Login', new_session_path) %>
   <%= link_to('Sign up', new_user_path) %>
