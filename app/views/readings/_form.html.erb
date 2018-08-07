@@ -1,0 +1,19 @@
+<%= link_to "Back Home", root_path %>
+
+<%= form_for reading do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :subtitle %>
+  <%= f.text_field :subtitle %> <br>
+
+  <%= f.label :category %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name, include_blank: true, prompt: "Select category reading belongs to") %>
+
+  <%= f.label :summary %>
+  <%= f.text_field :summary %> <br>
+  <%= f.label :content   %>
+  <%= f.text_area :content %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
