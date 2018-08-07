@@ -8,7 +8,8 @@
   <%= f.text_field :subtitle %> <br>
 
   <%= f.label :category %>
-  <%= f.collection_select(:category_id, Category.all, :id, :name, include_blank: true, prompt: "Select category reading belongs to") %>
+  <%= f.text_field :category_id %>
+  <!-- <%= f.collection_select(:category_id, Category.all, :id, :name, include_blank: true, prompt: "Select category reading belongs to") %> -->
 
   <%= f.label :summary %>
   <%= f.text_field :summary %> <br>
