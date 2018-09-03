@@ -4,7 +4,7 @@ class CreateReadings < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.string :subtitle
       t.integer :category_id
-      t.string :summary
+      t.string :summary, null: false
       t.text :content
       t.timestamps
     end
